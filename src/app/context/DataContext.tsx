@@ -62,7 +62,8 @@ export interface Prescription {
   doctorName: string;
   appointmentId: string;
   date: string;
-  fileName: string;
+  fileName: string;   // original display name (e.g. "report.pdf")
+  filePath: string;   // actual disk filename used in /uploads/ URL
   fileSize: string;
   diagnosis: string;
 }
@@ -159,7 +160,8 @@ function mapPrescription(p: any): Prescription {
     doctorName: p.doctor_name ?? "",
     appointmentId: p.appointment_id ? String(p.appointment_id) : "",
     date: p.created_at ? String(p.created_at).split("T")[0] : "",
-    fileName: p.file_name ?? "",
+    fileName: p.file_name ?? "",          // original name for display
+    filePath: p.file_path ?? p.file_name ?? "", // disk filename for URL
     fileSize: "–",
     diagnosis: p.diagnosis ?? "General Prescription",
   };

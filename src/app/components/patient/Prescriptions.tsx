@@ -136,9 +136,10 @@ export default function Prescriptions() {
                     <FileText className="w-6 h-6" />
                   </div>
                   <a
-                    href={`http://localhost:5000/uploads/${rx.fileName}`}
+                    href={`http://localhost:5000/uploads/${rx.filePath}`}
                     target="_blank"
                     rel="noreferrer"
+                    download={rx.fileName}
                     className="p-2 text-[#94A3B8] hover:text-[#6366F1] hover:bg-[#EEF2FF] rounded-lg transition-all"
                   >
                     <Download className="w-5 h-5" />

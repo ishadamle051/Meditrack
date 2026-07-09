@@ -151,7 +151,8 @@ export default function DoctorPrescriptions() {
                         </p>
                       </td>
                       <td className="py-4 px-6">
-                        <a href={`http://localhost:5000/uploads/${p.fileName}`} target="_blank" rel="noreferrer"
+                        <a href={`http://localhost:5000/uploads/${p.filePath}`} target="_blank" rel="noreferrer"
+                          download={p.fileName}
                           className="flex items-center gap-2 text-[#2EC4B6] hover:text-[#209F93] hover:underline w-fit" style={{ fontSize: "13px", fontWeight: 600 }}>
                           <Download className="w-4 h-4" /> View/Download
                         </a>
